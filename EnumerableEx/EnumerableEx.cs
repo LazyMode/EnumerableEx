@@ -3,6 +3,79 @@ using System.Collections.Generic;
 
 static partial class EnumerableEx
 {
+    public static bool All<T>(this IEnumerable<T> source)
+    {
+        foreach (var item in source) ;
+        return true;
+    }
+
+    public static bool All<T>(this IEnumerable<T> source, bool errorToFalse)
+    {
+        try
+        {
+            foreach (var item in source) ;
+        }
+        catch
+        {
+            if (errorToFalse)
+                return false;
+            throw;
+        }
+        return true;
+    }
+    public static bool All<T>(this IEnumerable<T> source, Func<T, bool> test, bool errorToFalse)
+    {
+        try
+        {
+            foreach (var item in source)
+            {
+                if (!test(item))
+                    return false;
+            }
+        }
+        catch
+        {
+            if (errorToFalse)
+                return false;
+            throw;
+        }
+        return true;
+    }
+
+    public static bool Any<T>(this IEnumerable<T> source, bool errorToFalse)
+    {
+        try
+        {
+            foreach (var item in source)
+                return true;
+        }
+        catch
+        {
+            if (errorToFalse)
+                return false;
+            throw;
+        }
+        return false;
+    }
+    public static bool Any<T>(this IEnumerable<T> source, Func<T, bool> test, bool errorToFalse)
+    {
+        try
+        {
+            foreach (var item in source)
+            {
+                if (test(item))
+                    return true;
+            }
+        }
+        catch
+        {
+            if (errorToFalse)
+                return false;
+            throw;
+        }
+        return false;
+    }
+
     public static IEnumerable<TResult> ZipFull<T1st, T2nd, TResult>(this IEnumerable<T1st> src1st, IEnumerable<T2nd> src2nd, Func<T1st, T2nd, TResult> selector)
     {
         if (src1st == null)
