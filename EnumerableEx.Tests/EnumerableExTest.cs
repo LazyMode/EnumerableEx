@@ -38,7 +38,7 @@ namespace EnumerableExTests
         }
 
         [Fact]
-        public void AllTest()
+        public void ExAllTest()
         {
             Assert.True("".All());
             Assert.True("".All(c => true, true));
@@ -55,7 +55,7 @@ namespace EnumerableExTests
             Assert.Throws<InvalidOperationException>(() => e.All(c => true, false));
         }
         [Fact]
-        public void AnyTest()
+        public void ExAnyTest()
         {
             Assert.False("".Any());
             Assert.False("".Any(c => true, true));
@@ -77,7 +77,7 @@ namespace EnumerableExTests
         }
 
         [Fact]
-        public void SeqEqualTest()
+        public void SequenceEqualTest()
         {
             Assert.True("".SequenceEqual(""));
             Assert.True("1".SequenceEqual("1"));

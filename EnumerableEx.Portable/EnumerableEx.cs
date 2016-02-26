@@ -1,3 +1,2 @@
 ﻿public partial class EnumerableEx
 { }
-
