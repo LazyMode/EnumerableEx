@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "EnumerableEx", "EnumerableEx\EnumerableEx.shproj", "{DE70B84A-82D1-4210-8555-456BD547798B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EnumerableEx.Portable", "EnumerableEx.Portable\EnumerableEx.Portable.csproj", "{4C1DE50D-4AED-4231-8956-4DCBA4A0776B}"
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		EnumerableEx\EnumerableEx.projitems*{de70b84a-82d1-4210-8555-456bd547798b}*SharedItemsImports = 13
+		EnumerableEx\EnumerableEx.projitems*{4c1de50d-4aed-4231-8956-4dcba4a0776b}*SharedItemsImports = 4
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4C1DE50D-4AED-4231-8956-4DCBA4A0776B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C1DE50D-4AED-4231-8956-4DCBA4A0776B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C1DE50D-4AED-4231-8956-4DCBA4A0776B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C1DE50D-4AED-4231-8956-4DCBA4A0776B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
