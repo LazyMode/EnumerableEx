@@ -33,12 +33,17 @@ static partial class EnumerableEx
             throw new InvalidOperationException();
     }
 
-    public static bool SequenceEqual<T>(this IEnumerable<T> self, IEnumerable<T> that, Func<T, T, bool> test)
+    public static bool SequenceEqual<T>(this IEnumerable<T> src1st, IEnumerable<T> src2nd, Func<T, T, bool> test)
     {
-        var selfCollection = self as ICollection<T>;
-        var thatCollection = that as ICollection<T>;
-        if (selfCollection != null && thatCollection != null
-            && selfCollection.Count != thatCollection.Count)
+        if (src1st == null)
+            throw new NullReferenceException();
+        if (src2nd == null)
+            throw new ArgumentNullException(nameof(src2nd));
+
+        var coll1st = src1st as ICollection<T>;
+        var coll2nd = src2nd as ICollection<T>;
+        if (coll1st != null && coll2nd != null
+            && coll1st.Count != coll2nd.Count)
         {
             return false;
         }
@@ -46,16 +51,16 @@ static partial class EnumerableEx
         if (test == null)
             test = EqualityComparer<T>.Default.Equals;
 
-        var selfEnumerator = self.GetEnumerator();
-        var thatEnumerator = that.GetEnumerator();
-        while (selfEnumerator.MoveNext())
+        var enmtr1st = src1st.GetEnumerator();
+        var enmtr2nd = src2nd.GetEnumerator();
+        while (enmtr1st.MoveNext())
         {
-            if (!thatEnumerator.MoveNext())
+            if (!enmtr2nd.MoveNext())
                 return false;
 
-            if (!test(selfEnumerator.Current, thatEnumerator.Current))
+            if (!test(enmtr1st.Current, enmtr2nd.Current))
                 return false;
         }
-        return !thatEnumerator.MoveNext();
+        return !enmtr2nd.MoveNext();
     }
 }
