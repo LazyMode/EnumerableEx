@@ -8,8 +8,8 @@
     <ProjectGuid>{4C1DE50D-4AED-4231-8956-4DCBA4A0776B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>EnumerableEx.Portable</RootNamespace>
-    <AssemblyName>EnumerableEx.Portable</AssemblyName>
+    <RootNamespace>EnumerableEx</RootNamespace>
+    <AssemblyName>EnumerableEx</AssemblyName>
     <DefaultLanguage>zh-CN</DefaultLanguage>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -36,6 +36,9 @@
   <ItemGroup>
     <!-- A reference to the entire .NET Framework is automatically included -->
     <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EnumerableEx.cs" />
   </ItemGroup>
   <Import Project="..\EnumerableEx\EnumerableEx.projitems" Label="Shared" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
