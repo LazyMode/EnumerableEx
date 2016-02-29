@@ -8,6 +8,6 @@
         <description>-</description>
     </metadata>
     <files>
-        <file src="EnumerableEx.dll" target="lib\EnumerableEx.dll" />
+        <file src="Release\EnumerableEx.dll" target="lib\EnumerableEx.dll" />
     </files>
 </package>
